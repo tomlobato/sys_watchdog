@@ -1,4 +1,7 @@
 class SysWatchdog
+    DEFAULT_CONF_FILE = '/etc/sys_watchdog.yml'
+    DEFAULT_LOG_FILE  = '/var/log/sys_watchdog.log'
+
     def initialize conf_file: nil, log_file: nil
         @logger = WdLogger.new (log_file || DEFAULT_LOG_FILE)
         parse_conf (conf_file || DEFAULT_CONF_FILE)
