@@ -1,6 +1,6 @@
 class WdTest
     attr_accessor :name, 
-                  :test_cmd, :test_url, :restore_cmd, :notify_on_change,
+                  :test_cmd, :test_url, :notify_on_change, :restore_cmd, 
                   :expected_regex, :expected_string, :expected_max, :expected_min, 
                   :fail
 
@@ -8,10 +8,12 @@ class WdTest
         @logger = logger
 
         @name = name
+
         @test_cmd = params[:test_cmd]
         @test_url = params[:test_url]
+        @notify_on_change = params[:notify_on_change]
         @restore_cmd = params[:restore_cmd]
-        @test_url = params[:notify_on_change]
+
         @expected_regex = params[:expected_regex]
         @expected_string = params[:expected_string]
         @expected_max = params[:expected_max]
