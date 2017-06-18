@@ -5,7 +5,7 @@ Sys Watchdog
 ## Installation
 
 ```
-gem install 'sys_watchdog'
+gem install sys_watchdog
 ```
 
 Then, on linux:  
