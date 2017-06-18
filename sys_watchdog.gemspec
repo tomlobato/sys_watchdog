@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.description = %q{Keep your UNIX servers green by performing periodic checks and opitionally actions and notifications}
   s.email = %q{lobato@bettercall.io}
   s.files = %w(
-    Rakefile
+    bin/sys_watchdog
     lib/sys_watchdog.rb
     lib/sys_watchdog/core_extensions.rb
     lib/sys_watchdog/install.rb
@@ -19,7 +19,7 @@ Gem::Specification.new do |s|
     lib/sys_watchdog/util.rb
     lib/sys_watchdog/wd_logger.rb
     lib/sys_watchdog/wd_test.rb
-    bin/sys_watchdog
+    Rakefile
     util/sys_watchdog.service
     util/sys_watchdog_sample.yml
   )
