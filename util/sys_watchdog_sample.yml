@@ -15,7 +15,31 @@ config:
   #   - myself@mysite.com
 
 tests:
-  # Services
+  ## General
+  boot_time:
+    notify_on_change: uptime -s
+
+  ## URLs
+  site_status:
+    test_url: https://www.mysite.com
+
+  # helpdesk_status:
+  #   test_url: https://helpdesk_status.mysite.com
+
+  ## Disks
+  disk_root:
+    test_cmd: "df / | grep -v Filesystem | awk '{print $5}' | sed 's/%//'"
+    expected_max: 90
+
+  # disk_shared_storage:
+  #   test_cmd: "df /var/www/site/shared | grep -v Filesystem | awk '{print $5}' | sed 's/%//'"
+  #   expected_max: 90
+
+  ## Mounts
+  # shared_storage:
+  #   test_cmd: mount | grep /var/www/site/shared
+
+  ## Services
   # dns_server:
   #   test_cmd: host -t A www.mysite.com ns1.mydns.com | tail -1
   #   expected_regex: ^www.mysite.com has address
@@ -26,31 +50,7 @@ tests:
   #   expected_string: Active: active (running)
   #   restore_cmd: systemctl restart redis-server
 
-  # Processes
+  ## Processes
   # worker_status:
   #   test_cmd: ps aux | grep 'sidekiq 4.2.10 site'
-
-  # URLs
-  site_status:
-    test_url: https://www.mysite.com
-
-  # helpdesk_status:
-  #   test_url: https://helpdesk_status.mysite.com
-
-  # Mounts
-  # shared_storage:
-  #   test_cmd: mount | grep /var/www/site/shared
-
-  # Disks
-  disk_root:
-    test_cmd: "df / | grep -v Filesystem | awk '{print $5}' | sed 's/%//'"
-    expected_max: 90
-
-  # disk_shared_storage:
-  #   test_cmd: "df /var/www/site/shared | grep -v Filesystem | awk '{print $5}' | sed 's/%//'"
-  #   expected_max: 90
-
-  # General
-  boot_time:
-    notify_on_change: uptime -s
 
