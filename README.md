@@ -19,14 +19,20 @@ rbenv rehash
 If on Linux with systemd available (eg: Ubuntu 16):  
 
 ```
-sys_watchdog install_with_systemd
+sys_watchdog setup_with_systemd
 ```
 
 Otherwise:  
 
 ```
-sys_watchdog install_with_cron
+sys_watchdog setup_with_cron
 ```
+
+### Configuration
+
+After install, edit ```/etc/sys_watchdog.yml```. It has some examples of tests.
+Beside /etc/sys_watchdog.yml, you can tak a look in [/test/sys_watchdog_test.yml](https://github.com/tomlobato/sys_watchdog/blob/master/test/sys_watchdog_test.yml) to see examples.
+If instaled via cron, uncomment the job line in /etc/crontab.
 
 ### Config Settings
 
