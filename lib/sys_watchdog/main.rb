@@ -63,7 +63,7 @@ class SysWatchdog
             end
         end
     rescue => e
-        log_ex e
+        @logger.error e.desc
     end
 
     def fail test, exitstatus, output

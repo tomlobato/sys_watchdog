@@ -4,10 +4,6 @@ class Exception
   end
 end
 
-def log_ex e, msg = nil
-  if @logger
-    @logger.error e.desc
-  else
-    STDERR.puts e.desc
-  end
+def log_ex e
+  STDERR.puts e.desc
 end

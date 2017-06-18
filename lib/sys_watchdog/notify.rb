@@ -5,12 +5,12 @@ class SysWatchdog
         begin
             send_mail sub, body if @conf.smtp_server
         rescue => e
-            log_ex e
+            @logger.error e.desc
         end
         begin
             send_slack_msg "#{sub}\n#{body}" if @conf.slack_token
         rescue => e
-            log_ex e
+            @logger.error e.desc
         end
     end
 
