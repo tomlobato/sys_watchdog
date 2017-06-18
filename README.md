@@ -8,15 +8,11 @@ Sys Watchdog
 gem install sys_watchdog
 ```
 
-If using Rbenv:
-
-```
-rbenv rehash
-```
+If using Rbenv, run ```rbenv rehash``` to make sys_watchdog binary available.
 
 ## Setup
 
-If on Linux with systemd available (eg: Ubuntu 16):  
+If on Linux with systemd available (eg: Ubuntu 16+, RedHat 7+. Generally distro versions released from 2015):  
 
 ```
 sys_watchdog setup_with_systemd
@@ -30,9 +26,25 @@ sys_watchdog setup_with_cron
 
 ### Configuration
 
-After install, edit ```/etc/sys_watchdog.yml```. It has some examples of tests.
-Beside /etc/sys_watchdog.yml, you can tak a look in [/test/sys_watchdog_test.yml](https://github.com/tomlobato/sys_watchdog/blob/master/test/sys_watchdog_test.yml) to see examples.
-If instaled via cron, uncomment the job line in /etc/crontab.
+After install, edit ```/etc/sys_watchdog.yml```.
+You can see some examples in this file and in [/test/sys_watchdog_test.yml](https://github.com/tomlobato/sys_watchdog/blob/master/test/sys_watchdog_test.yml).  
+
+Now you can test from the command line. 
+
+```
+sys_watchdog test
+``` 
+
+### Start
+
+Finally, after installed and configured, enable periodic run...
+
+for systemd:  
+```systemctl start sys_watchdog```
+
+or uncommenting the added cron line:  
+```vim /etc/crontab```
+
 
 ### Config Settings
 
