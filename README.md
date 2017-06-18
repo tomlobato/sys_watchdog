@@ -2,6 +2,8 @@
 Sys Watchdog
 =================
 
+** perform all steps as root
+
 ## Installation
 
 ```
