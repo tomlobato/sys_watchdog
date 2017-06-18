@@ -1,12 +1,14 @@
-module Notify
+class SysWatchdog
+    private
+
     def notify sub, body = ""
         begin
-            send_mail sub, body
+            send_mail sub, body if @conf.smtp_server
         rescue => e
             log_ex e
         end
         begin
-            send_slack_msg "#{sub}\n#{body}"
+            send_slack_msg "#{sub}\n#{body}" if @conf.slack_token
         rescue => e
             log_ex e
         end

@@ -1,14 +1,14 @@
-module Main
-    def initialize
-        @logger = WdLogger.new LOG_FILE
-        parse_conf
+class SysWatchdog
+    def initialize conf_file: nil, log_file: nil
+        @logger = WdLogger.new (log_file || DEFAULT_LOG_FILE)
+        parse_conf (conf_file || DEFAULT_CONF_FILE)
         setup
-        true
     end
 
-    def run
+    def run once: false
         loop do
             @tests.each{|test| run_test test}
+            return if once
             sleep 60
         end
     end
@@ -29,14 +29,9 @@ module Main
         end
     end
 
-    def conf_file
-        CONF_FILE.each do |file|
-            return file if File.exists? file
-        end
-        raise "No conf file found."
-    end
+    def parse_conf conf_file
+        raise "Conf file #{conf_file} not found." unless File.exist? conf_file
 
-    def parse_conf
         conf = YAML.load_file conf_file
         conf.deep_symbolize_keys!
 

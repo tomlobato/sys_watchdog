@@ -4,7 +4,7 @@ class Install
     thisdir = File.join File.dirname(__FILE__)
     
     copy "#{thisdir}/../../util/sys_watchdog_sample.yml", 
-          SysWatchdog::CONF_FILE
+          SysWatchdog::DEFAULT_CONF_FILE
 
     copy "#{thisdir}/../../util/sys_watchdog.service", 
          "/lib/systemd/system/"

@@ -1,0 +1,26 @@
+
+config:
+  name: My Website Server
+  server_name: main website
+
+tests:
+  ls_success:
+    test_cmd: ls /
+
+  ls_fail:
+    test_cmd: ls /erfe/4ytwrg/qwewqf/34ter
+
+  site_status_success:
+    test_url: https://www.google.com
+
+  site_status_fail:
+    test_url: https://www.6wybwudybsuadbysiudkd.com
+
+  number_output_success:
+    test_cmd: echo 1
+    expected_max: 2
+
+  number_output_fail:
+    test_cmd: echo 3
+    expected_max: 2
+

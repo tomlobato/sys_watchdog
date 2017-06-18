@@ -29,7 +29,7 @@ class WdTest
     end
 
     def run after_restore: false
-        @logger.info "testing #{@name}"
+        @logger.info "========== testing #{@name}"
 
         unless @test_cmd
             @logger.error "test cmd or url required"
