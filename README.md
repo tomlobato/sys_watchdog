@@ -19,13 +19,13 @@ rbenv rehash
 If on Linux with systemd available (eg: Ubuntu 16):  
 
 ```
-sys_watchdog install
+sys_watchdog install_with_systemd
 ```
 
-Otherwise it can run via cron:  
+Otherwise:  
 
 ```
-echo '* *   * * * root sys_watchdog' >> /etc/crontab
+sys_watchdog install_with_cron
 ```
 
 ### Config Settings
