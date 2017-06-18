@@ -10,6 +10,10 @@ when 'setup_with_systemd'
 when 'setup_with_cron'
   Setup.new.setup_with_cron
 
+when 'test'
+  sw = SysWatchdog.new log_file: STDOUT
+  sw.run once: true
+
 when 'once'
   SysWatchdog.new.run once: true
 
