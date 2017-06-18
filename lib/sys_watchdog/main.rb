@@ -1,4 +1,4 @@
-class Main
+module Main
     def initialize
         @logger = WdLogger.new LOG_FILE
         parse_conf

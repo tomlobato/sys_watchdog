@@ -5,6 +5,8 @@ require 'sys_watchdog'
 case ARGV[0]
 when 'install'
   Install.new.install
+when 'hey'
+  puts 'hey!'
 when nil
   SysWatchdog.new.run
 end
