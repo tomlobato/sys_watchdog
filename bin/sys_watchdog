@@ -3,12 +3,17 @@
 require 'sys_watchdog'
 
 case ARGV[0]
-when 'install_with_systemd'
-  Install.new.install_with_systemd
-when 'install_with_cron'
-  Install.new.install_with_cron
+
+when 'setup_with_systemd'
+  Setup.new.setup_with_systemd
+
+when 'setup_with_cron'
+  Setup.new.setup_with_cron
+
 when 'once'
   SysWatchdog.new.run once: true
+
 when nil
   SysWatchdog.new.run
 end
+

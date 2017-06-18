@@ -1,10 +1,10 @@
 
-class Install
+class Setup
   def initialize
     @thisdir = File.join File.dirname(__FILE__)
   end
 
-  def install_with_systemd
+  def with_systemd
     copy_sample_conf
     install_systemd_service
 
@@ -17,7 +17,7 @@ class Install
     puts "systemctl status sys_watchdog"
   end
 
-  def install_with_cron
+  def with_cron
     copy_sample_conf
     add_cron_line
 
