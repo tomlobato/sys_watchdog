@@ -8,10 +8,24 @@ Sys Watchdog
 gem install sys_watchdog
 ```
 
-Then:
+If using Rbenv:
+
+```
+rbenv rehash
+```
+
+## Setup
+
+If on Linux with systemd available (eg: Ubuntu 16):  
 
 ```
 sys_watchdog install
+```
+
+Otherwise it can run via cron:  
+
+```
+echo '* *   * * * root sys_watchdog' >> /etc/crontab
 ```
 
 ### Config Settings
