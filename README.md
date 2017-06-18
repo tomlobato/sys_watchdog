@@ -40,9 +40,9 @@ expected_string   | Slack endpoint, default is _https://slack.com/api_.
 expected_max      | Optional `Logger` instance that logs HTTP requests.
 expected_min      | Optional open/read timeout in seconds.
 
-## Usage
+## Create a Slack Token
 
-### Create a New Bot Integration
+From https://github.com/slack-ruby/slack-ruby-client ...  
 
 This is something done in Slack, under [integrations](https://my.slack.com/services). Create a [new bot](https://my.slack.com/services/new/bot), and note its API token.
 
