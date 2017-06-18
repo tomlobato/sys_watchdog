@@ -1,23 +1,26 @@
 
-# http://rustamagasanov.com/blog/2017/02/24/systemd-example-for-a-simple-ruby-daemon-supervision/
-# http://www.devdungeon.com/content/creating-systemd-service-files
-
-# $ vim /lib/systemd/system/allgreen.service
-# [Unit]
-# Description=Allgreen supervisor
-# [Service]
-# User=root
-# Group=root
-# WorkingDirectory=/var/local/allgreen
-# Restart=on-failure
-# ExecStart=/usr/local/sbin/allgreen.rb
-
-# systemctl enable allgreen
-# systemctl start allgreen
-# systemctl status allgreen
-
 class Install
-  def self.install
+  def install
+    thisdir = File.join File.dirname(__FILE__)
     
+    copy "#{thisdir}/../../util/sys_watchdog_sample.yml", 
+          SysWatchdog::CONF_FILE
+
+    copy "#{thisdir}/../../util/sys_watchdog.service", 
+         "/lib/systemd/system/"
+
+    run 'systemctl enable sys_watchdog'
+  end
+  
+  private
+
+  def copy from, to
+    puts "Copying #{from} to #{to}..."
+    FileUtils.cp from, to
+  end
+
+  def run cmd
+    puts "Running #{cmd}..."
+    system cmd
   end
 end

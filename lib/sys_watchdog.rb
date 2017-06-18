@@ -2,7 +2,6 @@
 
 require "net/https"  
 require "uri"
-require 'active_support/all'
 require 'fileutils'
 require 'logger'
 require 'mail'

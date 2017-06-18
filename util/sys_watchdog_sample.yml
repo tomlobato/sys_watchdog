@@ -3,7 +3,7 @@ config:
   name: My Website Server
   server_name: main website # if not present, `hostname` will be used
 
-  # Send alerts to Slack (create your slack token: https://github.com/slack-ruby/slack-ruby-client#usage)
+  # Send alerts to Slack (create your slack token in https://github.com/slack-ruby/slack-ruby-client#usage)
   # slack_token: xoxb-...
   # slack_channel: '#alerts'
 
@@ -15,19 +15,38 @@ config:
   #   - myself@mysite.com
 
 tests:
+  # Services
   dns_server:
     test_cmd: host -t A www.mysite.com ns1.mydns.com | tail -1
     expected_regex: ^www.mysite.com has address
     restore_cmd: systemctl restart bind9
 
+  redis_server:
+    test_cmd: systemctl status redis-server
+    expected_string: Active: active (running)
+    restore_cmd: systemctl restart redis-server
+
+  # Processes
+  worker_status:
+    test_cmd: ps aux | grep 'sidekiq 4.2.10 site'
+
+  # URLs
   site_status:
     test_url: https://www.mysite.com
 
   helpdesk_status:
     test_url: https://helpdesk_status.mysite.com
 
+  # Mounts
   shared_storage:
     test_cmd: mount | grep /var/www/site/shared
 
-  worker_status:
-    test_cmd: ps aux | grep 'sidekiq 4.2.10 site'
+  # Disks
+  disk_root:
+    test_cmd: "df / | grep -v Filesystem | awk '{print $5}' | sed 's/%//'"
+    expected_max: 90
+
+  disk_shared_storage:
+    test_cmd: "df /var/www/site/shared | grep -v Filesystem | awk '{print $5}' | sed 's/%//'"
+    expected_max: 90
+

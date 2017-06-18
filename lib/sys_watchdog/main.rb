@@ -56,7 +56,7 @@ class Main
             end
         else
             unless test.fail
-                if test.restore_cmd.present? and not after_restore
+                if test.restore_cmd and not after_restore
                     test.restore
                     run_test test, after_restore: true
                 else
@@ -70,7 +70,7 @@ class Main
 
     def fail test, exitstatus, output
         test.fail = true
-        body = "output: #{output}" if body.present?
+        body = "output: #{output}" if body and not body.empty?
         notify "#{test.name} fail", body
     end
 end

@@ -31,7 +31,7 @@ class WdTest
     def run after_restore: false
         @logger.info "testing #{@name}"
 
-        unless @test_cmd.present?
+        unless @test_cmd
             @logger.error "test cmd or url required"
             return
         end
@@ -60,22 +60,22 @@ class WdTest
     end
 
     def setup
-        if @test_url.present?
+        if @test_url
             @test_cmd = "wget -O - '#{ @test_url }' > /dev/null 2>&1"
         end
-        if @expected_regex.present?
+        if @expected_regex
             @expected_regex = Regexp.new @expected_regex
         end
     end
 
     def check_result exitstatus, output
-        success = if @expected_regex.present?
+        success = if @expected_regex
             output =~ @expected_regex
-        elsif @expected_string.present?
-            output == @expected_string
-        elsif @expected_max.present?
+        elsif @expected_string
+            output.index @expected_string
+        elsif @expected_max
             output.to_f <= @expected_max
-        elsif @expected_min.present?
+        elsif @expected_min
             output.to_f <= @expected_min
         else
             exitstatus == 0
