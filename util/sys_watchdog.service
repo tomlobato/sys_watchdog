@@ -1,0 +1,11 @@
+
+[Unit]
+Description=SysWatchdog supervisor
+
+[Service]
+User=root
+Group=root
+WorkingDirectory=/var/local/sys_watchdog
+Restart=on-failure
+ExecStart=/usr/local/sys_watchdog/sys_watchdog
+
