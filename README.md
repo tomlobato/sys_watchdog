@@ -8,7 +8,7 @@ Sys Watchdog
 gem install sys_watchdog
 ```
 
-Then, on linux:  
+Then:
 
 ```
 sys_watchdog install
@@ -18,27 +18,27 @@ sys_watchdog install
 
 setting      | description
 -------------|-------------------------------------------------------------------------------------------------
-name         | Slack API token.
-server_name  | An optional logger, defaults to `::Logger.new(STDOUT)` at `Logger::WARN` level.
-slack_token  | An optional logger, defaults to `::Logger.new(STDOUT)` at `Logger::WARN` level.
-slack_channel| An optional logger, defaults to `::Logger.new(STDOUT)` at `Logger::WARN` level.
-smtp_server  | An optional logger, defaults to `::Logger.new(STDOUT)` at `Logger::WARN` level.
-smtp_domain  | An optional logger, defaults to `::Logger.new(STDOUT)` at `Logger::WARN` level.
-mail_from    | An optional logger, defaults to `::Logger.new(STDOUT)` at `Logger::WARN` level.
-mail_to      | An optional logger, defaults to `::Logger.new(STDOUT)` at `Logger::WARN` level.
+name         | -
+server_name  | -
+slack_token  | -
+slack_channel| -
+smtp_server  | -
+smtp_domain  | -
+mail_from    | -
+mail_to      | -
 
 #### Sys Test Settings
 
 setting           | description
 ------------------|-------------------------------------------------------------------------------------------
-test_cmd          | Slack API token.
-test_url          | User-agent, defaults to _Slack Ruby Client/version_.
-notify_on_change  | Optional HTTP proxy.
-restore_cmd       | Optional SSL certificates path.
-expected_regex    | Optional SSL certificates file.
-expected_string   | Slack endpoint, default is _https://slack.com/api_.
-expected_max      | Optional `Logger` instance that logs HTTP requests.
-expected_min      | Optional open/read timeout in seconds.
+test_cmd          | -
+test_url          | -
+notify_on_change  | -
+restore_cmd       | -
+expected_regex    | -
+expected_string   | -
+expected_max      | -
+expected_min      | -
 
 ## Create a Slack Token
 
