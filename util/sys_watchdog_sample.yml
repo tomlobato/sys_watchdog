@@ -50,3 +50,7 @@ tests:
   #   test_cmd: "df /var/www/site/shared | grep -v Filesystem | awk '{print $5}' | sed 's/%//'"
   #   expected_max: 90
 
+  # General
+  boot_time:
+    notify_on_change: uptime -s
+

@@ -4,6 +4,7 @@ class SysWatchdog
 
     def initialize conf_file: nil, log_file: nil
         @logger = WdLogger.new (log_file || DEFAULT_LOG_FILE)
+        @trackers = {}
         parse_conf (conf_file || DEFAULT_CONF_FILE)
         setup
     end
@@ -47,6 +48,14 @@ class SysWatchdog
 
     def run_test test, after_restore: false
         success, exitstatus, output = test.run
+
+        if test.notify_on_change
+            if @trackers[test.name] != output
+                notify "#{test.name} changed", "old: #{@trackers[test.name]}\nnew: #{output}"
+            end
+            @trackers[test.name] = output
+        end
+
         if success
             if test.fail
                 test.fail = false
