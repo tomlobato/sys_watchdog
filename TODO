@@ -1,0 +1,22 @@
+Create more default tests like test_url:
+  dns query
+  check all disks usage by config.check_disk_usage = true, or for custom list
+  check all mounts by config.check_mounts = true, or for custom list
+  open ports, local or remote
+  monitor number output and alerts or takes action when new output is too far from average (create test config option for timeframe of average calculation, with default of 24h)
+  ping
+  check blacklists for domain or IP
+  check open relay
+  config.check_mem = true, to check memory and swap
+  config.check_load = true, for load average
+
+Add option when using test_url:
+  method: get or head
+
+Multithread for parallel checks
+
+flexibilize period, currently hardcoded to 60s
+
+Lockfile for process
+
+lock for sys tests

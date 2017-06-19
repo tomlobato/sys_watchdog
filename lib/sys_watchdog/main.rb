@@ -3,7 +3,7 @@ class SysWatchdog
     DEFAULT_LOG_FILE  = '/var/log/sys_watchdog.log'
 
     def initialize conf_file: nil, log_file: nil
-        log_file ||= DEFAULT_LOG_FILE
+        log_file  ||= DEFAULT_LOG_FILE
         conf_file ||= DEFAULT_CONF_FILE
 
         @logger = WdLogger.new log_file
@@ -37,7 +37,7 @@ class SysWatchdog
     end
 
     def parse_conf conf_file
-        raise "Conf file #{conf_file} not found." unless File.exist? conf_file
+        check_conf_file conf_file
 
         conf = YAML.load_file conf_file
         conf.deep_symbolize_keys!
@@ -47,6 +47,23 @@ class SysWatchdog
         @tests = conf[:tests].keys.map { |name|
             WdTest.new(name, conf[:tests][name], @logger)
         }
+    end
+
+    def check_conf_file conf_file
+        unless File.readable? conf_file
+            raise "Conf file #{conf_file} not found or unreadable. Aborting." 
+        end
+
+        conf_stat = File.stat conf_file
+
+        unless conf_stat.mode.to_s(8) =~ /0600$/
+            raise "Conf file #{conf_file} must have mode 0600. Aborting." 
+        end
+
+        unless (conf_stat.uid == 0           and conf_stat.gid == 0) or 
+               (conf_stat.uid == Process.uid and conf_stat.gid == Process.gid)
+            raise "Conf file #{conf_file} must have uid/gid set to root or to current running uid/gid. Aborting." 
+        end
     end
 
     def run_test test, after_restore: false

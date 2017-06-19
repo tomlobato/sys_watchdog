@@ -56,9 +56,10 @@ class Setup
           SysWatchdog::DEFAULT_CONF_FILE
   end
 
-  def copy from, to
+  def copy from, to, mod = 0600
     puts "Copying #{from} to #{to}..."
     FileUtils.cp from, to
+    FileUtils.chmod mod, to
   end
 
   def run cmd
