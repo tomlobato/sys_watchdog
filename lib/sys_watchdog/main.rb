@@ -4,7 +4,7 @@ class SysWatchdog
 
     def initialize conf_file: nil, log_file: nil
         log_file ||= DEFAULT_LOG_FILE
-        conf_file ||= DEFAULT_CONF_FILE)
+        conf_file ||= DEFAULT_CONF_FILE
 
         @trackers = {}
 
