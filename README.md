@@ -8,9 +8,9 @@ By [Bettercall.io](https://bettercall.io/).
 
 SysWatchdog keeps your *NIX servers green by performing periodic checks and optionally actions like service restarts and notifications.
 
-**Perform all following steps logged as root user**
-
 ## Install
+
+**Perform this and following steps logged as root user.**
 
 ```
 gem install sys_watchdog
@@ -36,7 +36,7 @@ Edit ```/etc/sys_watchdog.yml```. You can see example configurations in [util/sy
 
 ## Test run
 
-Run from command line:  
+Run from command line:
 
 ```
 sys_watchdog test
@@ -49,9 +49,11 @@ It will execute all system tests defined in ```/etc/sys_watchdog.yml``` and exit
 Finally, start the periodic run...
 
 for systemd:  
+
 ```systemctl start sys_watchdog```
 
 or, if installed with cron, uncomment the cron job line:  
+
 ```vim /etc/crontab```
 
 
