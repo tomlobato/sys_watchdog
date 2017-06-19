@@ -45,11 +45,7 @@ Finally, start the periodic run...
 
 for systemd:  
 
-```systemctl start sys_watchdog```
-
-or, if installed with cron, uncomment the cron job line:  
-
-```vim /etc/crontab```
+```sys_watchdog start```
 
 ## Command line Cli
 
