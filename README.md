@@ -118,6 +118,8 @@ Run sys_watchdog tests:
 ./bin/sys_watchdog test
 ```
 
+Send a PR and win merge! Its free ;)
+
 ## Copyright and License
 
 Copyright (c) 2017, [Bettercall.io](https://bettercall.io).
