@@ -60,8 +60,7 @@ class SysWatchdog
             raise "Conf file #{conf_file} must have mode 0600. Aborting." 
         end
 
-        unless (conf_stat.uid == 0           and conf_stat.gid == 0) or 
-               (conf_stat.uid == Process.uid and conf_stat.gid == Process.gid)
+        unless match_root_or_current_user(conf_stat)
             raise "Conf file #{conf_file} must have uid/gid set to root or to current running uid/gid. Aborting." 
         end
     end
