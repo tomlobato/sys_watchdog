@@ -8,7 +8,7 @@ By [Bettercall.io](https://bettercall.io/).
 
 SysWatchdog keeps your *NIX servers green by performing periodic checks and optionally actions like service restarts and notifications.  
 
-Take 20min to install and start to think what you\`ll make with the spare you\`ll have from now on ;)
+Take 20min to install and start to think what you\`ll make with your spare from now on ;)
 
 ## Install
 
