@@ -98,6 +98,7 @@ This is something done in Slack, under [integrations](https://my.slack.com/servi
 ```
 git clone https://github.com/tomlobato/sys_watchdog
 cd sys_watchdog
+bundle
 rake test
 ```
 
