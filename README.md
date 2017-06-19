@@ -3,7 +3,8 @@ sys_watchdog
 
 [![Gem Version](https://badge.fury.io/rb/sys_watchdog.svg)](https://badge.fury.io/rb/sys_watchdog)
 [![Code Climate](https://codeclimate.com/github/tomlobato/sys_watchdog.svg)](https://codeclimate.com/github/tomlobato/sys_watchdog)
-
+![](http://ruby-gem-downloads-badge.herokuapp.com/sys_watchdog?type=total)
+ 
 By [Bettercall.io](https://bettercall.io/).
 
 sys_watchdog keeps your *NIX servers green by performing periodic checks and optionally actions like service restarts and notifications.  
