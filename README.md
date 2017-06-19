@@ -8,7 +8,7 @@ By [Bettercall.io](https://bettercall.io/).
 
 SysWatchdog keeps your *NIX servers green by performing periodic checks and optionally actions like service restarts and notifications.
 
-*Perform all following steps logged as root user*
+**Perform all following steps logged as root user**
 
 ## Install
 
