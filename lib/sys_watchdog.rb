@@ -13,7 +13,7 @@ require 'mail'
 require 'sys_watchdog/core_extensions'
 require 'sys_watchdog/wd_logger'
 require 'sys_watchdog/wd_test'
-require 'sys_watchdog/install'
+require 'sys_watchdog/setup'
 
 require 'sys_watchdog/main'
 require 'sys_watchdog/notify'
