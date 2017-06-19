@@ -23,16 +23,8 @@ If using Rbenv, run ```rbenv rehash``` to make sys_watchdog binary available.
 
 ## Setup
 
-If on Linux with systemd available (eg: Ubuntu 16+, RedHat 7+. Generally distro versions released from 2015 on):  
-
 ```
-sys_watchdog setup_with_systemd
-```
-
-Otherwise:  
-
-```
-sys_watchdog setup_with_cron
+sys_watchdog setup
 ```
 
 Edit ```/etc/sys_watchdog.yml```. You can see example configurations in [util/sys_watchdog_sample.yml](https://github.com/tomlobato/sys_watchdog/blob/master/util/sys_watchdog_sample.yml) and [test/sys_watchdog_test.yml](https://github.com/tomlobato/sys_watchdog/blob/master/test/sys_watchdog_test.yml).  
