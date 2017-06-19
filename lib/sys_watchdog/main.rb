@@ -56,19 +56,17 @@ class SysWatchdog
 
         notify_change test, output
 
+        return if success == test.fail
+
         if success
-            if test.fail
-                test.fail = false
-                notify "#{test.name} ok"
-            end
+            test.fail = false
+            notify "#{test.name} ok"
         else
-            unless test.fail
-                if test.restore_cmd and not after_restore
-                    test.restore
-                    run_test test, after_restore: true
-                else
-                    fail test, exitstatus, output
-                end
+            if test.restore_cmd and not after_restore
+                test.restore
+                run_test test, after_restore: true
+            else
+                fail test, exitstatus, output
             end
         end
     rescue => e
