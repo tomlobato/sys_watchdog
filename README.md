@@ -40,12 +40,12 @@ It will execute all system tests defined in ```/etc/sys_watchdog.yml``` and exit
 
 ## Start
 
-Finally, after installed and configured, start the periodic run...
+Finally, start the periodic run...
 
 for systemd:  
 ```systemctl start sys_watchdog```
 
-or, if installed with cron, uncomment the added cron line:  
+or, if installed with cron, uncomment the cron job line:  
 ```vim /etc/crontab```
 
 
