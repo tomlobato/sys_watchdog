@@ -6,7 +6,9 @@ Sys Watchdog
 
 By [Bettercall.io](https://bettercall.io/).
 
-SysWatchdog keeps your *NIX servers green by performing periodic checks and optionally actions like service restarts and notifications.
+SysWatchdog keeps your *NIX servers green by performing periodic checks and optionally actions like service restarts and notifications.  
+
+Take 20min to install and start to think what you\`ll make with the spare you\`ll have form now on ;)
 
 ## Install
 
