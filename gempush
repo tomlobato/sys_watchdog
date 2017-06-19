@@ -1,0 +1,5 @@
+#!/bin/bash
+
+rm sys_watchdog-*.gem
+gem build sys_watchdog.gemspec 
+gem push sys_watchdog-*.gem

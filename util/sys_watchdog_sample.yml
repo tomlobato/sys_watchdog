@@ -17,7 +17,7 @@ config:
 tests:
   ## General
   boot_time:
-    notify_output_change: uptime -s
+    notify_on_output_change: uptime -s
 
   ## URLs
   site_status:

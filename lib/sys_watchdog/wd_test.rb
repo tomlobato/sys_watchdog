@@ -1,6 +1,6 @@
 class WdTest
     attr_accessor :name, 
-                  :test_cmd, :test_url, :notify_output_change, :restore_cmd, 
+                  :test_cmd, :test_url, :notify_on_output_change, :restore_cmd, 
                   :expected_regex, :expected_string, :expected_max, :expected_min, 
                   :status, :previous_output
 
@@ -11,7 +11,7 @@ class WdTest
 
         @test_cmd = params[:test_cmd]
         @test_url = params[:test_url]
-        @notify_output_change = params[:notify_output_change]
+        @notify_on_output_change = params[:notify_on_output_change]
         @restore_cmd = params[:restore_cmd]
 
         @expected_regex = params[:expected_regex]
