@@ -6,7 +6,7 @@ def red(mytext) ; "\e[31m#{mytext}\e[0m" ; end
 
 def help_msg
   <<~HEREDOC
-    sys_watchdog v#{SysWatchdog::VERSION}
+    sys_watchdog v#{SysWatchdogVersion::VERSION.dup}
 
     Usage: sys_watchdog [setup|test|start|stop|once|uninstall|help|version]
 
@@ -43,7 +43,7 @@ when nil
   SysWatchdog.new.run
 
 when 'version', '-v', '--version'
-  puts SysWatchdog::VERSION
+  puts SysWatchdogVersion::VERSION.dup
 
 when 'help', '-h'
   puts help_msg

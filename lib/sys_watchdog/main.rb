@@ -1,5 +1,4 @@
 class SysWatchdog
-    VERSION = '0.1.11'
     DEFAULT_CONF_FILE = '/etc/sys_watchdog.yml'
     DEFAULT_LOG_FILE  = '/var/log/sys_watchdog.log'
     WORKING_DIR = '/var/local/sys_watchdog'

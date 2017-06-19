@@ -17,3 +17,4 @@ require 'sys_watchdog/setup'
 
 require 'sys_watchdog/main'
 require 'sys_watchdog/notify'
+require "sys_watchdog/version"

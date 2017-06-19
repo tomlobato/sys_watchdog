@@ -1,3 +1,3 @@
-module SysWatchdog
-  VERSION = "0.1.12".freeze
+module SysWatchdogVersion
+  VERSION = "0.1.14".freeze
 end

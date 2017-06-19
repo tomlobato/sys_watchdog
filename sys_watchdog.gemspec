@@ -3,7 +3,7 @@ require "sys_watchdog/version"
 
 Gem::Specification.new do |s|
   s.name          = "sys_watchdog"
-  s.version       = SysWatchdog::VERSION.dup
+  s.version       = SysWatchdogVersion::VERSION.dup
   s.authors       = ["Tom Lobato"]
   s.email         = "lobato@bettercall.io"
   s.homepage      = "http://sys-watchdog.bettercall.io/"
