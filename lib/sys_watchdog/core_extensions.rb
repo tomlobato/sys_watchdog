@@ -9,6 +9,6 @@ def log_ex e
 end
 
 def match_root_or_current_user stat
-  (stat.uid == 0           and stat.gid == 0) or 
+  (stat.uid == 0           and stat.gid == 0) ||
   (stat.uid == Process.uid and stat.gid == Process.gid)
 end
