@@ -30,7 +30,7 @@ Edit ```/etc/sys_watchdog.yml```. You can see example configurations in [util/sy
 
 ## Test run
 
-Run from command line to:  
+Run from command line:  
 
 ```
 sys_watchdog test
