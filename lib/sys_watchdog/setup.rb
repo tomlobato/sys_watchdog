@@ -29,7 +29,7 @@ class Setup
   private
 
   def add_cron_line
-    run "echo '#* *   * * * root sys_watchdog' >> /etc/crontab"
+    run "echo '#* *   * * * root sys_watchdog once' >> /etc/crontab"
   end
 
   def install_systemd_service
