@@ -26,15 +26,15 @@ Otherwise:
 sys_watchdog setup_with_cron
 ```
 
-The setup copies [util/sys_watchdog_sample.yml](https://github.com/tomlobato/sys_watchdog/blob/master/util/sys_watchdog_sample.yml) to ```/etc/sys_watchdog.yml```. You can see some examples in this file and in [test/sys_watchdog_test.yml](https://github.com/tomlobato/sys_watchdog/blob/master/test/sys_watchdog_test.yml).  
+Edit ```/etc/sys_watchdog.yml```. You can see example configurations in [util/sys_watchdog_sample.yml](https://github.com/tomlobato/sys_watchdog/blob/master/util/sys_watchdog_sample.yml) and [test/sys_watchdog_test.yml](https://github.com/tomlobato/sys_watchdog/blob/master/test/sys_watchdog_test.yml).  
 
-Test from the command line. 
+## Test from the command line.
 
 ```
 sys_watchdog test
 ``` 
 
-### Start
+## Start
 
 Finally, after installed and configured, start the periodic run...
 
@@ -45,7 +45,7 @@ or, if installed with cron, uncomment the added cron line:
 ```vim /etc/crontab```
 
 
-### Config Settings
+## Config Settings
 
 setting      | description
 -------------|-------------------------------------------------------------------------------------------------
@@ -58,7 +58,7 @@ smtp_domain  | -
 mail_from    | -
 mail_to      | -
 
-#### Sys Test Settings
+## Sys Test Settings
 
 setting           | description
 ------------------|-------------------------------------------------------------------------------------------
