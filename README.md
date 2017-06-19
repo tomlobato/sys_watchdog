@@ -13,8 +13,6 @@ Take 20min to install and start to think what you\`ll make with your spare time 
 [Rio de Janeiro](https://www.google.com/search?q=rio+de+janeiro&source=lnms&tbm=isch&sa=X&ved=0ahUKEwi10v2Z8sjUAhXCcRQKHYvFBpMQ_AUIDCgD&biw=1440&bih=799)?
 It\`s up to you ;)
 
-![](images/dev_on_the_beach.jpg)
-
 ## Install
 
 **Perform this and following steps logged as root user.**
