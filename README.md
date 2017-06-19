@@ -1,4 +1,4 @@
-Sys Watchdog
+sys_watchdog
 =================
 
 [![Gem Version](https://badge.fury.io/rb/sys_watchdog.svg)](https://badge.fury.io/rb/sys_watchdog)
@@ -6,7 +6,7 @@ Sys Watchdog
 
 By [Bettercall.io](https://bettercall.io/).
 
-SysWatchdog keeps your *NIX servers green by performing periodic checks and optionally actions like service restarts and notifications.  
+sys_watchdog keeps your *NIX servers green by performing periodic checks and optionally actions like service restarts and notifications.  
 
 Take 20min to install and start to think what you\`ll make with your spare time ;)
 
