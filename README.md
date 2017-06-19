@@ -59,6 +59,26 @@ or, if installed with cron, uncomment the cron job line:
 
 ```vim /etc/crontab```
 
+## Command line Cli
+
+```
+# sys_watchdog help
+sys_watchdog v0.1.13
+
+Usage: sys_watchdog [setup|test|start|stop|once|uninstall|help|version]
+
+When called without options executes the system tests each 60 seconds. This is the normal operation when working with a system daemon starter like systemd or upstart.
+
+Options:
+  setup        Create the configuration file, create the working directory and configure periodic run with systemd or cron.
+  test         Similar to once, but also sets the log output to STDOUT.
+  start        Start periodic run. If using systemd it will run 'systemctl start sys_watchdog'. If using cron it will enable/uncomment the cronjob line.  
+  stop         Stop periodic run.
+  once         Run tests once and exit, rather than run each 60 seconds which is the normal behavior.
+  uninstall    Deletes created files and services. After that, if you want to completlly uninstall, run 'gem uninstall sys_watchdog'.
+  -v, version  Prints version and exit.
+  -h, help     Prints the current message.
+```
 
 ## Config Settings
 
