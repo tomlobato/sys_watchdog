@@ -28,11 +28,15 @@ sys_watchdog setup_with_cron
 
 Edit ```/etc/sys_watchdog.yml```. You can see example configurations in [util/sys_watchdog_sample.yml](https://github.com/tomlobato/sys_watchdog/blob/master/util/sys_watchdog_sample.yml) and [test/sys_watchdog_test.yml](https://github.com/tomlobato/sys_watchdog/blob/master/test/sys_watchdog_test.yml).  
 
-## Test from the command line.
+## Test run
+
+Run from command line to:  
 
 ```
 sys_watchdog test
 ``` 
+
+It will execute all system tests defined in ```/etc/sys_watchdog.yml``` and exit. You can use this to adjust your tests and get a grasp of the sys_watchdog operation.  
 
 ## Start
 
