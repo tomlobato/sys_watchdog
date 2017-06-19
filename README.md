@@ -95,14 +95,25 @@ This is something done in Slack, under [integrations](https://my.slack.com/servi
 
 ## Develop
 
+Download & install dependencies:  
+
 ```
 git clone https://github.com/tomlobato/sys_watchdog
 cd sys_watchdog
-
 bundle
+```
 
+Run code tests:  
+
+```
 chmod 0600 test/sys_watchdog_test.yml 
 rake test
+```
+
+Run sys_watchdog tests:
+
+```
+./bin/sys_watchdog test
 ```
 
 ## Copyright and License
