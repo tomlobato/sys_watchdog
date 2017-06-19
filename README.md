@@ -95,7 +95,7 @@ This is something done in Slack, under [integrations](https://my.slack.com/servi
 
 ## Develop
 
-**Dont need root privileges here.**
+**Don\`t need root privileges here.**
 
 Download & install dependencies:  
 
