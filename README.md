@@ -26,7 +26,7 @@ Otherwise:
 sys_watchdog setup_with_cron
 ```
 
-After install, edit ```/etc/sys_watchdog.yml```.
+Now edit ```/etc/sys_watchdog.yml```.
 You can see some examples in this file and in [test/sys_watchdog_test.yml](https://github.com/tomlobato/sys_watchdog/blob/master/test/sys_watchdog_test.yml).  
 
 Now you can test from the command line. 
