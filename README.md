@@ -101,7 +101,7 @@ expected_min             | -
 
 ## Minimal /etc/sys_watchdog.yml
 
-```
+```yml
 config:
   name: My Website Server
 
@@ -125,7 +125,7 @@ tests:
 
 ## Full sample /etc/sys_watchdog.yml
 
-```
+```yml
 config:
   name: My Website Server
   server_name: main website # if not present, `hostname` will be used
