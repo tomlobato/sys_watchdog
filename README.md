@@ -14,7 +14,7 @@ If using Rbenv, run ```rbenv rehash``` to make sys_watchdog binary available.
 
 ## Setup
 
-If on Linux with systemd available (eg: Ubuntu 16+, RedHat 7+. Generally distro versions released from 2015):  
+If on Linux with systemd available (eg: Ubuntu 16+, RedHat 7+. Generally distro versions released from 2015 on):  
 
 ```
 sys_watchdog setup_with_systemd
@@ -39,12 +39,12 @@ sys_watchdog test
 
 ### Start
 
-Finally, after installed and configured, enable periodic run...
+Finally, after installed and configured, start the periodic run...
 
 for systemd:  
 ```systemctl start sys_watchdog```
 
-or uncommenting the added cron line:  
+or, if installed with cron, uncomment the added cron line:  
 ```vim /etc/crontab```
 
 

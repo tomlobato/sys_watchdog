@@ -1,8 +1,9 @@
 Gem::Specification.new do |s|
   s.name          = "sys_watchdog"
-  s.version       = "0.0.1"
+  s.version       = "0.0.2"
   s.authors       = ["Tom Lobato"]
   s.email         = "lobato@bettercall.io"
+  s.homepage       = "http://sys-watchdog.bettercall.io/"
   s.homepage      = "http://rubygems.org/gems/sys_watchdog"
   s.summary       = "SysWatchdog keeps your UNIX servers green by performing periodic checks and opitionaly actions and notifications"
   s.description   = "SysWatchdog keeps your UNIX servers green by performing periodic checks and opitionaly actions and notifications."
