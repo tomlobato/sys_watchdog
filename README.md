@@ -43,8 +43,6 @@ It will execute all system tests defined in ```/etc/sys_watchdog.yml``` and exit
 
 Finally, start the periodic run...
 
-for systemd:  
-
 ```sys_watchdog start```
 
 ## Command line Cli
