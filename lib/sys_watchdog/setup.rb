@@ -11,10 +11,10 @@ class Setup
     puts "Installed."
 
     puts "\nEdit #{SysWatchdog::DEFAULT_CONF_FILE} and start:"
-    puts "systemctl start sys_watchdog"
+    puts "systemctl start sys-watchdog"
 
     puts "\nTo check daemon status:"
-    puts "systemctl status sys_watchdog"
+    puts "systemctl status sys-watchdog"
   end
 
   def with_cron
@@ -29,7 +29,7 @@ class Setup
   private
 
   def add_cron_line
-    run "echo '#* *   * * * root sys_watchdog once' >> /etc/crontab"
+    run "echo '#* *   * * * root /bin/bash -lc \'sys_watchdog once\' >> /etc/crontab"
   end
 
   def install_systemd_service
@@ -45,10 +45,10 @@ class Setup
       exit 1
     end
     
-    copy "#{@thisdir}/../../util/sys_watchdog.service", 
+    copy "#{@thisdir}/../../util/sys-watchdog.service", 
          services_dir
 
-    run 'systemctl enable sys_watchdog'
+    run 'systemctl enable sys-watchdog'
   end
 
   def copy_sample_conf

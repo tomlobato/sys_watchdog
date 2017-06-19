@@ -29,8 +29,9 @@ class SysWatchdog
             end
         end
         if @conf.smtp_server
+            _conf = @conf
             Mail.defaults do
-              delivery_method :smtp, address: @conf.smtp_server, port: 587, :domain => @conf.smtp_domain, 
+              delivery_method :smtp, address: _conf.smtp_server, port: 587, :domain => _conf.smtp_domain, 
                               :enable_starttls_auto => true, :openssl_verify_mode => 'none'
             end
         end
@@ -80,7 +81,7 @@ class SysWatchdog
                 test.restore
                 run_test test, after_restore: true
             else
-                fail test, exitstatus, output
+                fail test, output
             end
         end
     rescue => e
@@ -94,9 +95,9 @@ class SysWatchdog
         end
     end
 
-    def fail test, exitstatus, output
-        body = "exitstatus: #{exitstatus}"
-        body += "\noutput: #{output}" if output and not output.empty?
+    def fail test, output
+        body = ""
+        body += "output: #{output}" if output and not output.empty?
         notify "#{test.name} fail", body
     end
 end

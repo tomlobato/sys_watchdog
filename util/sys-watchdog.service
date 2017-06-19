@@ -1,0 +1,11 @@
+
+[Unit]
+Description=sys_watchdog supervisor
+
+[Service]
+User=root
+Group=root
+Restart=on-failure
+ExecStart=/bin/bash -lc 'sys_watchdog'
+StandardOutput=syslog
+StandardError=syslog

@@ -36,7 +36,7 @@ class SysWatchdog
     end
 
     def server_name
-        @conf.server_name || `hostname`
+        @conf.server_name || `hostname`.strip
     end
 
     def append_sys_info

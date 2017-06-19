@@ -20,3 +20,7 @@ flexibilize period, currently hardcoded to 60s
 Lockfile for process
 
 lock for sys tests
+
+remove slack-ruby-client from Gemfile. If it is set in .yml and is not available, send a error to log with instructions to install.
+
+adjusts dependencies verions
