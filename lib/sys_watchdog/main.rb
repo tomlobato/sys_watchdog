@@ -54,12 +54,7 @@ class SysWatchdog
     def run_test test, after_restore: false
         success, exitstatus, output = test.run
 
-        if test.notify_on_change
-            if @trackers[test.name] != output
-                notify "#{test.name} changed", "old: #{@trackers[test.name]}\nnew: #{output}"
-            end
-            @trackers[test.name] = output
-        end
+        notify_change test, output
 
         if success
             if test.fail
@@ -78,6 +73,15 @@ class SysWatchdog
         end
     rescue => e
         @logger.error e.desc
+    end
+
+    def notify_change test, output
+        if test.notify_on_change
+            if @trackers[test.name] != output
+                notify "#{test.name} changed", "old: #{@trackers[test.name]}\nnew: #{output}"
+            end
+            @trackers[test.name] = output
+        end
     end
 
     def fail test, exitstatus, output
