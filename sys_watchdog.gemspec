@@ -1,10 +1,13 @@
+$:.push File.expand_path("../lib", __FILE__)
+require "sys_watchdog/version"
+
 Gem::Specification.new do |s|
   s.name          = "sys_watchdog"
-  s.version       = "0.1.8"
+  s.version       = SysWatchdog::VERSION.dup
   s.authors       = ["Tom Lobato"]
   s.email         = "lobato@bettercall.io"
   s.homepage      = "http://sys-watchdog.bettercall.io/"
-  s.summary       = "SysWatchdog keeps your *NIX servers green by performing periodic checks and optionally actions like service restarts and notifications."
+  s.summary       = "sys_watchdog keeps your *NIX servers green by performing periodic checks and optionally actions like service restarts and notifications."
   s.description   = "#{s.summary} https://github.com/tomlobato/sys_watchdog http://sys-watchdog.bettercall.io."
   s.licenses      = ["MIT"]
   s.platform      = Gem::Platform::RUBY

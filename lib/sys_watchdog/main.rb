@@ -1,6 +1,10 @@
 class SysWatchdog
+    VERSION = '0.1.11'
     DEFAULT_CONF_FILE = '/etc/sys_watchdog.yml'
     DEFAULT_LOG_FILE  = '/var/log/sys_watchdog.log'
+    WORKING_DIR = '/var/local/sys_watchdog'
+    CRONJOB_PATH = '/etc/cron.d/sys_watchdog'
+    INSTALL_TYPE_PATH = "#{WORKING_DIR}/install_type"
 
     def initialize conf_file: nil, log_file: nil
         log_file  ||= DEFAULT_LOG_FILE

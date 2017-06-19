@@ -2,13 +2,35 @@
 
 require 'sys_watchdog'
 
+def red(mytext) ; "\e[31m#{mytext}\e[0m" ; end
+
+def help_msg
+  <<~HEREDOC
+    sys_watchdog v#{SysWatchdog::VERSION}
+
+    Usage: sys_watchdog [setup|test|start|stop|once|uninstall|help|version]
+
+    When called without options executes the system tests each 60 seconds. This is the normal operation when working with a system daemon starter like systemd or upstart.
+
+    Options:
+      setup        Create the configuration file, create the working directory and configure periodic run with systemd or cron.
+      test         Similar to once, but also sets the log output to STDOUT.
+      start        Start periodic run. If using systemd it will run 'systemctl start sys_watchdog'. If using cron it will enable/uncomment the cronjob line.  
+      stop         Stop periodic run.
+      once         Run tests once and exit, rather than run each 60 seconds which is the normal behavior.
+      uninstall    Deletes created files and services. After that, if you want to completlly uninstall, run 'gem uninstall sys_watchdog'.
+      -v, version  Prints version and exit.
+      -h, help     Prints the current message.
+
+  HEREDOC
+end
+
+setup_commands = %w(setup start stop uninstall)
+
 case ARGV[0]
 
-when 'setup_with_systemd'
-  Setup.new.with_systemd
-
-when 'setup_with_cron'
-  Setup.new.with_cron
+when *setup_commands
+  Setup.new.send ARGV[0].to_sym
 
 when 'test'
   sw = SysWatchdog.new log_file: STDOUT
@@ -19,5 +41,17 @@ when 'once'
 
 when nil
   SysWatchdog.new.run
+
+when 'version', '-v', '--version'
+  puts SysWatchdog::VERSION
+
+when 'help', '-h'
+  puts help_msg
+
+else
+  STDERR.puts red("Error: '#{ARGV[0]}' is not a valid option.")
+  puts ""
+  puts help_msg
+
 end
 
