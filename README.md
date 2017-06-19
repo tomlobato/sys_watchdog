@@ -26,26 +26,30 @@ Otherwise:
 sys_watchdog setup_with_cron
 ```
 
-The setup copies [util/sys_watchdog.yml](https://github.com/tomlobato/sys_watchdog/blob/master/util/sys_watchdog.yml) to ```/etc/sys_watchdog.yml```. You can see some examples in this file and in [test/sys_watchdog_test.yml](https://github.com/tomlobato/sys_watchdog/blob/master/test/sys_watchdog_test.yml).  
+Edit ```/etc/sys_watchdog.yml```. You can see example configurations in [util/sys_watchdog_sample.yml](https://github.com/tomlobato/sys_watchdog/blob/master/util/sys_watchdog_sample.yml) and [test/sys_watchdog_test.yml](https://github.com/tomlobato/sys_watchdog/blob/master/test/sys_watchdog_test.yml).  
 
-Test from the command line. 
+## Test run
+
+Run from command line:  
 
 ```
 sys_watchdog test
 ``` 
 
-### Start
+It will execute all system tests defined in ```/etc/sys_watchdog.yml``` and exit. You can use this to adjust your tests and get a grasp of the sys_watchdog operation.  
 
-Finally, after installed and configured, start the periodic run...
+## Start
+
+Finally, start the periodic run...
 
 for systemd:  
 ```systemctl start sys_watchdog```
 
-or, if installed with cron, uncomment the added cron line:  
+or, if installed with cron, uncomment the cron job line:  
 ```vim /etc/crontab```
 
 
-### Config Settings
+## Config Settings
 
 setting      | description
 -------------|-------------------------------------------------------------------------------------------------
@@ -58,7 +62,7 @@ smtp_domain  | -
 mail_from    | -
 mail_to      | -
 
-#### Sys Test Settings
+## Sys Test Settings
 
 setting           | description
 ------------------|-------------------------------------------------------------------------------------------
