@@ -1,4 +1,6 @@
 
+[![Gem Version](https://badge.fury.io/rb/sys_watchdog.svg)](https://badge.fury.io/rb/sys_watchdog)
+
 Sys Watchdog
 =================
 
