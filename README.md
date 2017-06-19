@@ -2,7 +2,9 @@
 Sys Watchdog
 =================
 
-** perform all steps as root
+SysWatchdog keeps your *NIX servers green by performing periodic checks and optionally actions like service restarts and notifications.
+
+*Perform all following steps logged as root user*
 
 ## Install
 
