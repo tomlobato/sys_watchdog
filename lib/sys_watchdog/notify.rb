@@ -25,10 +25,12 @@ class SysWatchdog
         body ||= ""
         body += append_sys_info
         
+        _conf = @conf
+
         mail = Mail.new do
-          from     @conf.mail_from
-          to       @conf.mail_to
-          subject  "Watchdog #{@conf.name} [#{server_name}]: #{ sub }"
+          from     _conf.mail_from
+          to       _conf.mail_to
+          subject  "Watchdog #{_conf.name} [#{server_name}]: #{ sub }"
           body     body
         end
 
