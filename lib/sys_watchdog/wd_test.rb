@@ -31,7 +31,7 @@ class WdTest
         end
     end
 
-    def run after_restore: false
+    def run
         @logger.info "========== testing #{@name}"
 
         unless @test_cmd
@@ -42,14 +42,14 @@ class WdTest
         exitstatus, output = run_cmd @test_cmd
 
         success = check_result exitstatus, output
-        @logger.info "success: #{success.to_s}"
+        @logger.info "success: #{success}"
 
         [success, exitstatus, output]
     end
 
     private
 
-    def run_cmd cmd, allow_raise = false
+    def run_cmd cmd
         @logger.info "run: #{ cmd }"
 
         output = IO.popen(cmd, "r") {|pipe| pipe.read}
@@ -75,17 +75,18 @@ class WdTest
     end
 
     def check_result exitstatus, output
-        success = if @expected_regex
-            output =~ @expected_regex
-        elsif @expected_string
-            output.index @expected_string
-        elsif @expected_max
-            output.to_f <= @expected_max
-        elsif @expected_min
-            output.to_f <= @expected_min
-        else
-            exitstatus == 0
-        end
+        success = 
+            if @expected_regex
+                output =~ @expected_regex
+            elsif @expected_string
+                output.index @expected_string
+            elsif @expected_max
+                output.to_f <= @expected_max
+            elsif @expected_min
+                output.to_f <= @expected_min
+            else
+                exitstatus == 0
+            end
         !!success
     end
 end

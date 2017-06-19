@@ -19,10 +19,10 @@ class SysWatchdog
         slack_client.chat_postMessage(channel: @conf[:slack_channel], text: "[#{server_name}] #{msg}", as_user: true)
     end
 
-    def send_mail sub, _body
+    def send_mail sub, body
         @logger.info "Sending email: #{ sub }"
 
-        body = _body || ""
+        body ||= ""
         body += append_sys_info
         
         mail = Mail.new do

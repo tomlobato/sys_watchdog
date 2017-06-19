@@ -3,9 +3,14 @@ class SysWatchdog
     DEFAULT_LOG_FILE  = '/var/log/sys_watchdog.log'
 
     def initialize conf_file: nil, log_file: nil
-        @logger = WdLogger.new (log_file || DEFAULT_LOG_FILE)
+        log_file ||= DEFAULT_LOG_FILE
+        conf_file ||= DEFAULT_CONF_FILE)
+
         @trackers = {}
-        parse_conf (conf_file || DEFAULT_CONF_FILE)
+
+        @logger = WdLogger.new log_file
+        parse_conf conf_file
+
         setup
     end
 
@@ -77,7 +82,8 @@ class SysWatchdog
 
     def fail test, exitstatus, output
         test.fail = true
-        body = "output: #{output}" if body and not body.empty?
+        body = "exitstatus: #{exitstatus}"
+        body += "\noutput: #{output}" if output and not output.empty?
         notify "#{test.name} fail", body
     end
 end
