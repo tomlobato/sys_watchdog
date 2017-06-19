@@ -99,9 +99,33 @@ expected_string          | -
 expected_max             | -
 expected_min             | -
 
-## Sample /etc/sys_watchdog.yml
+## Minimal /etc/sys_watchdog.yml
 
-```yml
+```
+config:
+  name: My Website Server
+
+  smtp_server: smtp.mymailer.com
+  smtp_domain: mysite.com
+  mail_from: system@mysite.com
+  mail_to: 
+    - myself@mysite.com
+
+tests:
+  site_status:
+    test_url: https://www.mysite.com
+
+  disk_root:
+    test_cmd: "df / | grep -v Filesystem | awk '{print $5}' | sed 's/%//'"
+    expected_max: 90
+    
+  worker_status:
+    test_cmd: ps aux | grep 'sidekiq 4.2.10 site'
+```
+
+## Full sample /etc/sys_watchdog.yml
+
+```
 config:
   name: My Website Server
   server_name: main website # if not present, `hostname` will be used
