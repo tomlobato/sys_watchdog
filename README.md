@@ -82,6 +82,8 @@ Options:
 
 ## Config Settings
 
+```config:```section of ```/etc/sys_watchdog.yml```:
+
 setting      | description
 -------------|-------------------------------------------------------------------------------------------------
 name         | -
@@ -95,6 +97,8 @@ mail_to      | -
 
 ## Sys Test Settings
 
+```tests:```section of ```/etc/sys_watchdog.yml```:
+
 setting           | description
 ------------------|-------------------------------------------------------------------------------------------
 test_cmd                 | -
@@ -105,6 +109,65 @@ expected_regex           | -
 expected_string          | -
 expected_max             | -
 expected_min             | -
+
+## Sample /etc/sys_watchdog.yml
+
+```yml
+config:
+  name: My Website Server
+  server_name: main website # if not present, `hostname` will be used
+
+  # Send alerts to Slack (create your slack token in https://github.com/slack-ruby/slack-ruby-client#usage)
+  # slack_token: xoxb-...
+  # slack_channel: '#alerts'
+
+  # Send email alerts (via any smtp server: https://sendgrid.com, https://postmarkapp.com/ or your own)
+  # smtp_server: smtp.mysite.com
+  # smtp_domain: mysite.com
+  # mail_from: system@mysite.com
+  # mail_to: 
+  #   - myself@mysite.com
+
+tests:
+  ## General
+  boot_time:
+    notify_on_output_change: uptime -s
+
+  ## URLs
+  site_status:
+    test_url: https://www.mysite.com
+
+  # helpdesk_status:
+  #   test_url: https://helpdesk_status.mysite.com
+
+  ## Disks
+  disk_root:
+    test_cmd: "df / | grep -v Filesystem | awk '{print $5}' | sed 's/%//'"
+    expected_max: 90
+
+  # disk_shared_storage:
+  #   test_cmd: "df /var/www/site/shared | grep -v Filesystem | awk '{print $5}' | sed 's/%//'"
+  #   expected_max: 90
+
+  ## Mounts
+  # shared_storage:
+  #   test_cmd: mount | grep /var/www/site/shared
+
+  ## Services
+  # dns_server:
+  #   test_cmd: host -t A www.mysite.com ns1.mydns.com | tail -1
+  #   expected_regex: ^www.mysite.com has address
+  #   restore_cmd: systemctl restart bind9
+
+  # redis_server:
+  #   test_cmd: systemctl status redis-server
+  #   expected_string: Active: active (running)
+  #   restore_cmd: systemctl restart redis-server
+
+  ## Processes
+  # worker_status:
+  #   test_cmd: ps aux | grep 'sidekiq 4.2.10 site'
+```
 
 ## Create a Slack Token
 
