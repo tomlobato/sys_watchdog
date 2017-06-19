@@ -93,6 +93,14 @@ This is something done in Slack, under [integrations](https://my.slack.com/servi
 
 ![](images/register-bot.png)
 
+## Develop
+
+```
+git clone https://github.com/tomlobato/sys_watchdog
+cd sys_watchdog
+rake test
+
+
 ## Copyright and License
 
 Copyright (c) 2017, [Bettercall.io](https://bettercall.io).
