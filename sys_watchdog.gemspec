@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name          = "sys_watchdog"
-  s.version       = "0.1.7"
+  s.version       = "0.1.8"
   s.authors       = ["Tom Lobato"]
   s.email         = "lobato@bettercall.io"
   s.homepage      = "http://sys-watchdog.bettercall.io/"
