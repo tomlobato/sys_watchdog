@@ -66,14 +66,14 @@ mail_to      | -
 
 setting           | description
 ------------------|-------------------------------------------------------------------------------------------
-test_cmd          | -
-test_url          | -
-notify_on_change  | -
-restore_cmd       | -
-expected_regex    | -
-expected_string   | -
-expected_max      | -
-expected_min      | -
+test_cmd                 | -
+test_url                 | -
+notify_on_output_change  | -
+restore_cmd              | -
+expected_regex           | -
+expected_string          | -
+expected_max             | -
+expected_min             | -
 
 ## Create a Slack Token
 

@@ -1,8 +1,8 @@
 class WdTest
     attr_accessor :name, 
-                  :test_cmd, :test_url, :notify_on_change, :restore_cmd, 
+                  :test_cmd, :test_url, :notify_output_change, :restore_cmd, 
                   :expected_regex, :expected_string, :expected_max, :expected_min, 
-                  :fail
+                  :status, :previous_output
 
     def initialize name, params, logger
         @logger = logger
@@ -11,7 +11,7 @@ class WdTest
 
         @test_cmd = params[:test_cmd]
         @test_url = params[:test_url]
-        @notify_on_change = params[:notify_on_change]
+        @notify_output_change = params[:notify_output_change]
         @restore_cmd = params[:restore_cmd]
 
         @expected_regex = params[:expected_regex]
@@ -19,7 +19,8 @@ class WdTest
         @expected_max = params[:expected_max]
         @expected_min = params[:expected_min]
 
-        @fail = false
+        @status = true
+        @previous_output = nil
 
         setup
     end
@@ -69,8 +70,8 @@ class WdTest
         if @expected_regex
             @expected_regex = Regexp.new @expected_regex
         end
-        if @notify_on_change
-            @test_cmd = @notify_on_change
+        if @notify_on_output_change
+            @test_cmd = @notify_on_output_change
         end
     end
 

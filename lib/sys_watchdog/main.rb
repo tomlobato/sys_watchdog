@@ -6,8 +6,6 @@ class SysWatchdog
         log_file ||= DEFAULT_LOG_FILE
         conf_file ||= DEFAULT_CONF_FILE
 
-        @trackers = {}
-
         @logger = WdLogger.new log_file
         parse_conf conf_file
 
@@ -52,14 +50,14 @@ class SysWatchdog
     end
 
     def run_test test, after_restore: false
-        success, exitstatus, output = test.run
+        new_status, exitstatus, output = test.run
 
-        notify_change test, output
+        notify_output_change test, output
 
-        return if success == test.fail
-
-        if success
-            test.fail = false
+        return if new_status == test.status
+        test.status = new_status
+        
+        if new_status
             notify "#{test.name} ok"
         else
             if test.restore_cmd and not after_restore
@@ -73,17 +71,14 @@ class SysWatchdog
         @logger.error e.desc
     end
 
-    def notify_change test, output
-        if test.notify_on_change
-            if @trackers[test.name] != output
-                notify "#{test.name} changed", "old: #{@trackers[test.name]}\nnew: #{output}"
-            end
-            @trackers[test.name] = output
+    def notify_output_change test, output
+        if test.notify_on_output_change and test.previous_output != output
+            notify "#{test.name} changed", "old: #{test.previous_output}\nnew: #{output}"
+            test.previous_output = output
         end
     end
 
     def fail test, exitstatus, output
-        test.fail = true
         body = "exitstatus: #{exitstatus}"
         body += "\noutput: #{output}" if output and not output.empty?
         notify "#{test.name} fail", body
