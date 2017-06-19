@@ -3,7 +3,7 @@ sys_watchdog
 
 [![Gem Version](https://badge.fury.io/rb/sys_watchdog.svg)](https://badge.fury.io/rb/sys_watchdog)
 [![Code Climate](https://codeclimate.com/github/tomlobato/sys_watchdog.svg)](https://codeclimate.com/github/tomlobato/sys_watchdog)
-![](http://ruby-gem-downloads-badge.herokuapp.com/sys_watchdog?type=total)
+![](http://ruby-gem-downloads-badge.herokuapp.com/sys_watchdog?type=total&label=gem downloads)
  
 By [Bettercall.io](https://bettercall.io/).
 
