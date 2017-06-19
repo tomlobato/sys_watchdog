@@ -5,7 +5,7 @@ Gem::Specification.new do |s|
   s.email         = "lobato@bettercall.io"
   s.homepage      = "http://sys-watchdog.bettercall.io/"
   s.summary       = "SysWatchdog keeps your *NIX servers green by performing periodic checks and optionally actions like service restarts and notifications."
-  s.description   = "SysWatchdog keeps your *NIX servers green by performing periodic checks and optionally actions like service restarts and notifications. Code: https://github.com/tomlobato/sys_watchdog Website: http://sys-watchdog.bettercall.io."
+  s.description   = "#{s.summary} https://github.com/tomlobato/sys_watchdog http://sys-watchdog.bettercall.io."
   s.licenses      = ["MIT"]
   s.platform      = Gem::Platform::RUBY
 
