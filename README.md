@@ -13,6 +13,8 @@ Take 20min to install and start to think what you\`ll make with your spare time 
 
 ## Install
 
+Requirements: Ruby 2.1+ (install here https://gorails.com/setup/ubuntu/16.04)
+
 **Perform this and following steps logged as root user.**
 
 ```
