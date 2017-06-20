@@ -212,7 +212,7 @@ rake test
 Run sys_watchdog tests:
 
 ```
-./bin/sys_watchdog test
+ruby -Ilib/ bin/sys_watchdog test
 ```
 
 Send a PR and win a merge! Its free ;)
