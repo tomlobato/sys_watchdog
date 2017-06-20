@@ -7,6 +7,6 @@ User=root
 Group=root
 Restart=on-failure
 WorkingDirectory=/var/local/sys_watchdog
-ExecStart=/bin/bash -lc 'sys_watchdog'
+ExecStart=/bin/bash -lc '/root/.rbenv/shims/sys_watchdog'
 StandardOutput=syslog
 StandardError=syslog
