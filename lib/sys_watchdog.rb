@@ -1,5 +1,3 @@
-#!/usr/bin/env ruby
-
 require "net/https"  
 require 'net/smtp'
 require "uri"
