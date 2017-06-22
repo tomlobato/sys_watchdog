@@ -27,6 +27,8 @@ engines:
         enabled: false
       Rubocop/Style/TrailingBlankLines:
         enabled: false
+      Rubocop/Style/IndentationWidth:
+        enabled: false
 ratings:
   paths:
     - Gemfile.lock
