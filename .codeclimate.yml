@@ -33,6 +33,8 @@ engines:
         enabled: false
       Rubocop/Style/SpaceInsideBlockBraces:
         enabled: false
+      Rubocop/Style/TrailingWhitespace:
+        enabled: false
 ratings:
   paths:
     - Gemfile.lock
