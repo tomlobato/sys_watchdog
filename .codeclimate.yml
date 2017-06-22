@@ -21,6 +21,8 @@ engines:
         Max: 10
       Rubocop/Metrics/AbcSize:
         Max: 20
+      Rubocop/Style/FrozenStringLiteralComment:
+        enabled: false
 ratings:
   paths:
   - Gemfile.lock
