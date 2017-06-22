@@ -76,7 +76,7 @@ class Setup
   def rewrite_cronjob enable
     c = File.read SysWatchdog::CRONJOB_PATH
     rep = enable ? '' : '#'
-    c.gsub! /^\s*#\s*/, rep
+    c.gsub!(/^\s*#\s*/, rep)
     File.write SysWatchdog::CRONJOB_PATH, c
   end
   

@@ -70,7 +70,7 @@ class SysWatchdog
     end
 
     def run_test test, after_restore: false
-        new_status, exitstatus, output = test.run
+        new_status, _exitstatus, output = test.run
 
         notify_output_change test, output
 
