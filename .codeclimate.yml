@@ -5,7 +5,7 @@ engines:
     enabled: true
     config:
       languages:
-      - ruby
+        - ruby
   fixme:
     enabled: true
   rubocop:
@@ -29,13 +29,13 @@ engines:
         enabled: false
 ratings:
   paths:
-  - Gemfile.lock
-  - "**.inc"
-  - "**.js"
-  - "**.jsx"
-  - "**.module"
-  - "**.php"
-  - "**.py"
-  - "**.rb"
+    - Gemfile.lock
+    - "**.inc"
+    - "**.js"
+    - "**.jsx"
+    - "**.module"
+    - "**.php"
+    - "**.py"
+    - "**.rb"
 exclude_paths:
   - test/
