@@ -16,7 +16,7 @@ Gem::Specification.new do |s|
   s.test_files    = `git ls-files -- test/*`.split("\n")
   s.require_paths = ["lib"]
   s.executables   = %w(sys_watchdog)
-  s.required_ruby_version = '>= 2.3.0'
+  s.required_ruby_version = '>= 2.1.0'
 
   s.add_dependency("mail", "~> 2.5")
   s.add_dependency("slack-ruby-client", "~> 0.8.1")
