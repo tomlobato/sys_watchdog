@@ -43,6 +43,12 @@ engines:
         enabled: false
       Rubocop/Style/NumericPredicate:
         enabled: false
+      Rubocop/Metrics/LineLength:
+        enabled: false
+      Rubocop/Style/AccessModifierIndentation:
+        enabled: false
+      Rubocop/Style/AlignHash:
+        enabled: false
 ratings:
   paths:
     - Gemfile.lock
