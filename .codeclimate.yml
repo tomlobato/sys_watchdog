@@ -35,6 +35,14 @@ engines:
         enabled: false
       Rubocop/Style/TrailingWhitespace:
         enabled: false
+      Rubocop/Style/AndOr:
+        enabled: false
+      Rubocop/Style/Documentation:
+        enabled: false
+      Rubocop/Style/MethodDefParentheses:
+        enabled: false
+      Rubocop/Style/NumericPredicate:
+        enabled: false
 ratings:
   paths:
     - Gemfile.lock

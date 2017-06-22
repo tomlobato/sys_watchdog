@@ -1,6 +1,6 @@
 class Exception
   def desc
-    "#{self.message} #{self.backtrace.join "\n" if self.backtrace}"
+    "#{ message } #{ backtrace&.join "\n" }"
   end
 end
 
