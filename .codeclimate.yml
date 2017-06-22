@@ -13,6 +13,8 @@ engines:
     checks:
       Rubocop/Style/SingleLineMethods:
         enabled: false
+      Rubocop/Metrics/ClassLength:
+        enabled: false
 ratings:
   paths:
   - Gemfile.lock
