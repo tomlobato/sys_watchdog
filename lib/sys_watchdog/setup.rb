@@ -75,7 +75,8 @@ class Setup
 
   def rewrite_cronjob enable
     c = File.read SysWatchdog::CRONJOB_PATH
-    c.gsub! /^\s*#\s*/, (enable ? '' : '#')
+    rep = enable ? '' : '#'
+    c.gsub! /^\s*#\s*/, rep
     File.write SysWatchdog::CRONJOB_PATH, c
   end
   
@@ -85,7 +86,7 @@ class Setup
   end
 
   def read_install_type
-    return unless File.exists? SysWatchdog::INSTALL_TYPE_PATH
+    return unless File.exist? SysWatchdog::INSTALL_TYPE_PATH
     File.read SysWatchdog::INSTALL_TYPE_PATH
   end
 
