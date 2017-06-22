@@ -84,7 +84,7 @@ class WdTest
             elsif @expected_max
                 output.to_f <= @expected_max
             elsif @expected_min
-                output.to_f <= @expected_min
+                output.to_f >= @expected_min
             else
                 exitstatus == 0
             end
