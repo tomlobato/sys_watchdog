@@ -32,9 +32,9 @@ class SysWatchdog
             end
         end
         if @conf.smtp_server
-            _conf = @conf
+            conf_ = @conf
             Mail.defaults do
-              delivery_method :smtp, address: _conf.smtp_server, port: 587, :domain => _conf.smtp_domain, 
+              delivery_method :smtp, address: conf_.smtp_server, port: 587, :domain => conf_.smtp_domain, 
                               :enable_starttls_auto => true, :openssl_verify_mode => 'none'
             end
         end
