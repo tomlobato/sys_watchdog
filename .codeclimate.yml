@@ -20,7 +20,7 @@ engines:
       Rubocop/Metrics/PerceivedComplexity:
         Max: 10
       Rubocop/Metrics/AbcSize:
-        enabled: false
+        Max: 20
 ratings:
   paths:
   - Gemfile.lock
