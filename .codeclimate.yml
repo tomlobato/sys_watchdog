@@ -11,16 +11,16 @@ engines:
   rubocop:
     enabled: true
     checks:
+      Rubocop/Metrics/PerceivedComplexity:
+        Max: 10
+      Rubocop/Metrics/AbcSize:
+        Max: 20
       Rubocop/Style/SingleLineMethods:
         enabled: false
       Rubocop/Metrics/ClassLength:
         enabled: false
       Rubocop/Metrics/MethodLength:
         enabled: false
-      Rubocop/Metrics/PerceivedComplexity:
-        Max: 10
-      Rubocop/Metrics/AbcSize:
-        Max: 20
       Rubocop/Style/FrozenStringLiteralComment:
         enabled: false
       Rubocop/Style/StringLiterals:
@@ -28,6 +28,10 @@ engines:
       Rubocop/Style/TrailingBlankLines:
         enabled: false
       Rubocop/Style/IndentationWidth:
+        enabled: false
+      Rubocop/Style/Not:
+        enabled: false
+      Rubocop/Style/SpaceInsideBlockBraces:
         enabled: false
 ratings:
   paths:
