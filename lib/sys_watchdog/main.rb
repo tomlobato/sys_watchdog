@@ -78,7 +78,7 @@ class SysWatchdog
         test.status = new_status
         
         if new_status
-            notify "#{test.name} ok"
+            notify "#{test.name} ok#{' (restored)' if after_restore}"
         else
             if test.restore_cmd and not after_restore
                 test.restore
